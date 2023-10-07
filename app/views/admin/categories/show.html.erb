@@ -4,3 +4,5 @@
 <% @categories_list.each do |category_item| %>
   <%= render partial: 'category_item', locals: { category_item: category_item }%>
 <% end %>
+
+<%= link_to 'Create New Category Here', "categories/new", class: 'btn btn-primary' %>

@@ -1,0 +1,10 @@
+<h1> Please Enter Your New Product Category Below</h1>
+
+<%= form_for [:admin, @category] do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <%= form.submit 'Create Category', class: 'btn btn-primary' %>
+<% end %>

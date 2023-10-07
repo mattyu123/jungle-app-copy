@@ -12,9 +12,10 @@ Rails.application.routes.draw do
   end
 
   # Category route in admin/categories
+  # categories/new will allow users to enter in a new category
   namespace :admin do 
-    # root to: 'categories#show'
     get 'categories', to: 'categories#show', as: 'categories'
+    get 'categories/new', to: 'categories#new', as: 'new_category'
   end
 
   resources :orders, only: [:create, :show]
@@ -24,7 +25,7 @@ Rails.application.routes.draw do
     resources :products, except: [:edit, :update, :show]
   end
 
-  # Set up route to the about section 
+  # Set up route to the about section
   get 'about', to: 'about#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
