@@ -5,9 +5,16 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
 
+  # Category view 
   resource :cart, only: [:show] do
     post   :add_item
     post   :remove_item
+  end
+
+  # Category route in admin/categories
+  namespace :admin do 
+    # root to: 'categories#show'
+    get 'categories', to: 'categories#show', as: 'categories'
   end
 
   resources :orders, only: [:create, :show]
