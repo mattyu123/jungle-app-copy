@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   # categories/new will allow users to enter in a new category
   namespace :admin do 
     get 'categories', to: 'categories#show', as: 'categories'
+
+    # routes that handle creating a new category and adding it to the database below
     get 'categories/new', to: 'categories#new', as: 'new_category'
+    post 'categories', to: 'categories#create'
   end
 
   resources :orders, only: [:create, :show]
