@@ -1,3 +1,6 @@
-<h1>Header</h1>
+<h1>Categories List</h1>
+<h4>Here are the different product categories that are currently available to customers</h4>
 
-<p>Hello, this is the view rendered code</p>
+<% @categories_list.each do |category_item| %>
+  <%= render partial: 'category_item', locals: { category_item: category_item }%>
+<% end %>

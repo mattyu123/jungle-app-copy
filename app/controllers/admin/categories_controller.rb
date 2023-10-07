@@ -1,5 +1,5 @@
 class Admin::CategoriesController < ApplicationController
   def show
-    render 'admin/categories/show'
+    @categories_list = Category.all
   end
 end

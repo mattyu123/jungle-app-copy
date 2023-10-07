@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     resources :products, except: [:edit, :update, :show]
   end
 
+  # Set up route to the about section 
   get 'about', to: 'about#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
