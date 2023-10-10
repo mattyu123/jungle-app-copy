@@ -10,8 +10,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
   <%= render 'layouts/top_nav' %>
+
+  <!-- THE CODE BELOW HERE WILL DISPLAY A BAR DISPLAYING WHETHER A USER IS LOGGED IN OR NOT --> 
+  <% if current_user %>
+    Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+  <% else %>
+    <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+  <% end %>
 
   <main class="container">
     <%= yield %>
